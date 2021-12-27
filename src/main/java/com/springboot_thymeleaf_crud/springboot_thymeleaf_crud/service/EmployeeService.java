@@ -4,12 +4,12 @@ import java.util.List;
 
 import com.springboot_thymeleaf_crud.springboot_thymeleaf_crud.model.Employee;
 
+import org.springframework.data.domain.Page;
+
 public interface EmployeeService {
-    List<Employee> getAllEmployees();
-
+    List <Employee> getAllEmployees();
     void saveEmployee(Employee employee);
-
     Employee getEmployeeById(long id);
-
     void deleteEmployeeById(long id);
+    Page <Employee> findPaginated(int pageNo, int pageSize, String sortedField, String sortDirection);
 }
